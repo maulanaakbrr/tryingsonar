@@ -1,33 +1,33 @@
-// Membuat job pipeline pertama (Dev1)
+// Update pipeline untuk menggunakan branch yang benar (misalnya 'main')
 pipelineJob('NPM-Testing-Dev1') {
     definition {
         cpsScm {
             scm {
                 git {
                     remote {
-                        url('https://github.com/maulanaakbrr/tryingsonar.git')
+                        url('https://github.com/maulanaakbrr/tryingsonar.git')  // URL repo yang benar
                     }
-                    branch('dev1')  // Branch Dev1
+                    branch('main')  // Pastikan ini menggunakan branch yang ada
                 }
             }
-            scriptPath('Jenkinsfile')  // Path untuk Jenkinsfile di repo
+            scriptPath('Jenkinsfile')
         }
     }
 }
 
-// Membuat job pipeline kedua (Dev2)
+// Pipeline kedua juga diupdate ke branch yang benar
 pipelineJob('NPM-Testing-Dev2') {
     definition {
         cpsScm {
             scm {
                 git {
                     remote {
-                        url('https://github.com/maulanaakbrr/tryingsonar.git')
+                        url('https://github.com/maulanaakbrr/tryingsonar.git')  // URL repo yang benar
                     }
-                    branch('dev2')  // Branch Dev2
+                    branch('main')  // Sesuaikan dengan branch yang benar
                 }
             }
-            scriptPath('Jenkinsfile')  // Path untuk Jenkinsfile di repo
+            scriptPath('Jenkinsfile')
         }
     }
 }
