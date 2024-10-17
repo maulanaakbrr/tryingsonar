@@ -7,14 +7,14 @@ pipelineJob('NPM-Testing-Dev1') {
                     remote {
                         url('https://github.com/maulanaakbrr/tryingsonar.git')  // Repository yang benar
                     }
-                    branch('main')  // Branch yang dipantau, misalnya 'main'
+                    branch('main')  // Branch yang dipantau
                 }
             }
-            scriptPath('Jenkinsfile')  // Path ke Jenkinsfile di dalam repo
+            scriptPath('Jenkinsfile')  // Path ke Jenkinsfile di repo
         }
     }
     triggers {
-        pollSCM('H/5 * * * *')  // Konfigurasi polling setiap 5 menit
+        scm('H/5 * * * *')  // Perbaikan triggers menggunakan 'scm' alih-alih 'pollSCM'
     }
 }
 
@@ -25,15 +25,15 @@ pipelineJob('NPM-Testing-Dev2') {
             scm {
                 git {
                     remote {
-                        url('https://github.com/maulanaakbrr/tryingsonar.git')  // Repository yang sama
+                        url('https://github.com/maulanaakbrr/tryingsonar.git')  // Repository yang benar
                     }
                     branch('main')  // Branch yang dipantau
                 }
             }
-            scriptPath('Jenkinsfile')  // Path ke Jenkinsfile di dalam repo
+            scriptPath('Jenkinsfile')  // Path ke Jenkinsfile di repo
         }
     }
     triggers {
-        pollSCM('H/5 * * * *')  // Konfigurasi polling setiap 5 menit
+        scm('H/5 * * * *')  // Perbaikan triggers menggunakan 'scm' alih-alih 'pollSCM'
     }
 }
