@@ -5,7 +5,7 @@ pipelineJob('NPM-Testing-Dev1') {
             scm {
                 git {
                     remote {
-                        url('https://github.com/maulanaakbrr/nodejs-testing.git')  // URL repo
+                        url('https://github.com/maulanaakbrr/tryingsonar.git')  // URL repo
                     }
                     branch('dev1')  // Branch yang digunakan
                 }
@@ -22,7 +22,7 @@ pipelineJob('NPM-Testing-Dev2') {
             scm {
                 git {
                     remote {
-                        url('https://github.com/maulanaakbrr/nodejs-testing.git')  // URL repo
+                        url('https://github.com/maulanaakbrr/tryingsonar.git')  // URL repo
                     }
                     branch('dev2')  // Branch yang digunakan
                 }
