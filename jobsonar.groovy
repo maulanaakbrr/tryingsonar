@@ -5,12 +5,12 @@ pipelineJob('NPM-Testing-Dev1') {
             scm {
                 git {
                     remote {
-                        url('https://github.com/maulanaakbrr/tryingsonar.git')  // URL repo
+                        url('https://github.com/maulanaakbrr/nodejs-testing.git')
                     }
-                    branch('dev1')  // Branch yang digunakan
+                    branch('dev1')  // Branch Dev1
                 }
             }
-            scriptPath('Jenkinsfile')  // Lokasi Jenkinsfile di repo
+            scriptPath('Jenkinsfile')  // Path untuk Jenkinsfile di repo
         }
     }
 }
@@ -22,12 +22,12 @@ pipelineJob('NPM-Testing-Dev2') {
             scm {
                 git {
                     remote {
-                        url('https://github.com/maulanaakbrr/tryingsonar.git')  // URL repo
+                        url('https://github.com/maulanaakbrr/nodejs-testing.git')
                     }
-                    branch('dev2')  // Branch yang digunakan
+                    branch('dev2')  // Branch Dev2
                 }
             }
-            scriptPath('Jenkinsfile')  // Lokasi Jenkinsfile di repo
+            scriptPath('Jenkinsfile')  // Path untuk Jenkinsfile di repo
         }
     }
 }
