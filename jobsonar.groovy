@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script {
                     def scannerHome = tool 'SonarQube Scanner'
-                    with credentialsId('SonarqubeVM') { // Assuming 'SonarqubeVM' is your credential ID
+                    with SonarQubeEnv(installationName:'SonarqubeVM') { 
                         sh """${scannerHome}/bin/sonar-scanner 
                               -Dsonar.projectKey=my-project-key 
                               -Dsonar.sources=. 
