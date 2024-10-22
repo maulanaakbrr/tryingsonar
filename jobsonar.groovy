@@ -29,13 +29,7 @@ pipeline {
                 script {
                     def scannerHome = tool 'SonarQube Scanner' // Pastikan SonarQube Scanner sudah diinstal di Jenkins
                     withSonarQubeEnv('Sonarqube VM') { // Gunakan nama konfigurasi SonarQube yang sudah kamu buat
-                        sh """
-                        ${scannerHome}/bin/sonar-scanner \
-                        -Dsonar.projectKey=my-project-key \
-                        -Dsonar.sources=. \
-                        -Dsonar.host.url=http://localhost:9000 \
-                        -Dsonar.login=${SONAR_AUTH_TOKEN}
-                        """
+                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=my-project-key -Dsonar.sources=. -Dsonar.host.url=http://localhost:9000 -Dsonar.login=${SONAR_AUTH_TOKEN}"
                     }
                 }
             }
