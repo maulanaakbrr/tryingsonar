@@ -1,10 +1,6 @@
 pipeline {
     agent any
-
-    tools {
-        nodejs "NodeJS" // Sesuaikan dengan NodeJS yang sudah diinstal di Jenkins
-    }
-
+    
     stages {
         stage('Clone Repository') {
             steps {
