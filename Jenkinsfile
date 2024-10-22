@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs "NodeJS" // Sesuaikan dengan NodeJS yang sudah diinstal di Jenkins
-    }
-
     stages {
         stage('Clone Repository') {
             steps {
@@ -21,23 +17,6 @@ pipeline {
         stage('Run Tests') {
             steps {
                 sh 'npm test'
-            }
-        }
-
-        stage('SonarQube Analysis') {
-            steps {
-                script {
-                    def scannerHome = tool 'SonarQube Scanner' // Pastikan sudah menginstal SonarQube Scanner di Jenkins
-                    withSonarQubeEnv('Sonarqube VM') { // Gunakan nama konfigurasi SonarQube yang sudah kamu buat
-                        sh """
-                        ${scannerHome}/bin/sonar-scanner \
-                        -Dsonar.projectKey=my-project-key \  // Ganti dengan project key kamu
-                        -Dsonar.sources=. \
-                        -Dsonar.host.url=http://localhost:9000 \
-                        -Dsonar.login=${SONAR_AUTH_TOKEN}    // Token yang sudah kamu setting di Jenkins
-                        """
-                    }
-                }
             }
         }
     }
