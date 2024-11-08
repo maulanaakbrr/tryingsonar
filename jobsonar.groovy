@@ -1,5 +1,5 @@
 // Pipeline untuk NPM-Testing-Dev1
-pipelineJob('NPM-Testing-Development-1') {
+pipelineJob('TSA-Notification') {
     definition {
         cpsScm {
             scm {
@@ -19,7 +19,7 @@ pipelineJob('NPM-Testing-Development-1') {
 }
 
 // Pipeline untuk NPM-Testing-Dev2
-pipelineJob('NPM-Testing-Development-2') {
+pipelineJob('TSA-Parameter') {
     definition {
         cpsScm {
             scm {
